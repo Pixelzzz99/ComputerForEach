@@ -37,6 +37,5 @@ void ComputersForEach::setCountOfAudiences_M(int newAudiences)
 
 int ComputersForEach::DoSolve(std::vector<int> &roster) const
 {
-    int result = this->_strategy->solve(roster);
-    return result;
+    return this->_strategy->solve(roster);
 }

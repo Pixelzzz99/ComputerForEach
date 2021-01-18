@@ -1,6 +1,6 @@
-#include "BruteForceAlternative.hpp"
+#include "SecondVersion.hpp"
 
-BruteForceAlternative::BruteForceAlternative(GeneratorTest *test)
+SecondVersion::SecondVersion(GeneratorTest *test)
 {
     setCountOfGroups_N(test->getCountOfGroups_N());
     setCountOfAudiences_M(test->getCountOfAudiences_M());
@@ -8,7 +8,7 @@ BruteForceAlternative::BruteForceAlternative(GeneratorTest *test)
     setComputersRoster_Y(test->getComputers_Y());
 }
 
-BruteForceAlternative::BruteForceAlternative(int countGroups_N, int countOfAudiences_M, int *studentsRoster, int *computersRoster)
+SecondVersion::SecondVersion(int countGroups_N, int countOfAudiences_M, int *studentsRoster, int *computersRoster)
 {
     setCountOfGroups_N(countGroups_N);
     setCountOfAudiences_M(countOfAudiences_M);
@@ -16,7 +16,7 @@ BruteForceAlternative::BruteForceAlternative(int countGroups_N, int countOfAudie
     setComputersRoster_Y(computersRoster);
 }
 
-std::vector<int> BruteForceAlternative::getStudentsRoster_X()
+std::vector<int> SecondVersion::getStudentsRoster_X()
 {
     std::vector<int> studentRosterWithoutIndex;
     for (int i = 0; i < getCountOfGroups_N(); i++)
@@ -26,7 +26,7 @@ std::vector<int> BruteForceAlternative::getStudentsRoster_X()
     return studentRosterWithoutIndex;
 }
 
-std::vector<int> BruteForceAlternative::getComputersRoster_Y()
+std::vector<int> SecondVersion::getComputersRoster_Y()
 {
     std::vector<int> computerRosterWithoutIndex;
     for (int i = 0; i < getCountOfAudiences_M(); i++)
@@ -36,7 +36,7 @@ std::vector<int> BruteForceAlternative::getComputersRoster_Y()
     return computerRosterWithoutIndex;
 }
 
-void BruteForceAlternative::setStudentsRoster_X(int *newStudentsRoster)
+void SecondVersion::setStudentsRoster_X(int *newStudentsRoster)
 {
     _studentsRoster_X.resize(getCountOfGroups_N());
     for (int i = 0; i < getCountOfGroups_N(); i++)
@@ -46,17 +46,18 @@ void BruteForceAlternative::setStudentsRoster_X(int *newStudentsRoster)
     }
 }
 
-void BruteForceAlternative::setComputersRoster_Y(int *newComputersRoster)
+void SecondVersion::setComputersRoster_Y(int *newComputersRoster)
 {
     _computersRoster_Y.resize(getCountOfAudiences_M());
     for (int i = 0; i < getCountOfAudiences_M(); i++)
     {
         _computersRoster_Y[i].first = newComputersRoster[i];
+        _computersRoster_Y[i].first--;
         _computersRoster_Y[i].second = i;
     }
 }
 
-int BruteForceAlternative::solve(std::vector<int> &finalRoster)
+int SecondVersion::solve(std::vector<int> &finalRoster)
 {
     SortStudentsAndComputersRosters();
     int id = 0;
@@ -83,7 +84,7 @@ int BruteForceAlternative::solve(std::vector<int> &finalRoster)
     return result;
 }
 
-void BruteForceAlternative::SortStudentsAndComputersRosters()
+void SecondVersion::SortStudentsAndComputersRosters()
 {
     std::sort(_studentsRoster_X.begin(), _studentsRoster_X.end());
     std::sort(_computersRoster_Y.begin(), _computersRoster_Y.end());

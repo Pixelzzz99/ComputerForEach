@@ -4,7 +4,6 @@ GeneratorTest::GeneratorTest(int min_count, int max_count)
 {
     this->MIN_COUNT = min_count;
     this->MAX_COUNT = max_count;
-    srand(time(nullptr));
     _countOfAudiences_M = Randomizator(MIN_COUNT, MAX_COUNT);
     _countOfGroups_N = Randomizator(MIN_COUNT, _countOfAudiences_M);
     _students_X = AddStudents(_countOfGroups_N);

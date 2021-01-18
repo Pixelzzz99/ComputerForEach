@@ -1,5 +1,7 @@
 #pragma once
 #include <vector>
+#include <algorithm>
+#include "GeneratorTest.hpp"
 
 class AlgorithmStrategy
 {

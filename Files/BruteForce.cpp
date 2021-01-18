@@ -41,6 +41,7 @@ std::vector<std::pair<int, int>> BruteForce::setComputersRoster_Y(int computers[
 
 int BruteForce::solve(std::vector<int> &finalRoster)
 {
+    
     std::sort(_studentsRoster_X.begin(), _studentsRoster_X.end());
     std::vector<int> answer_x(getCountOfGroups_N() + 1, 0);
     recursion(0, _computersRoster_Y, answer_x);
@@ -53,6 +54,7 @@ int BruteForce::solve(std::vector<int> &finalRoster)
         }
         finalRoster.push_back(_global_answer_x[i]);
     }
+    finalRoster.pop_back();
     return _answer;
 }
 
@@ -68,9 +70,9 @@ void BruteForce::recursion(int index, std::vector<std::pair<int, int>> other_y, 
         return;
     }
 
-    if (_answer < index)
+    if (_answer < index-1)
     {
-        _answer = index;
+        _answer = index-1;
         _global_answer_x = answer_x;
     }
     

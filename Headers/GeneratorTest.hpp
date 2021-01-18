@@ -19,6 +19,7 @@ private:
     int* AddStudents(int);
     int* AddComputers(int);
 
+
 public:
     GeneratorTest(int min_count, int max_count);
     ~GeneratorTest() = default;

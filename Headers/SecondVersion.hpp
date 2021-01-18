@@ -1,9 +1,9 @@
 #pragma once
+#include <algorithm>
 #include "AlgorithmStrategy.hpp"
-#include "algorithm"
-#include "GeneratorTest.hpp"
 
-class BruteForceAlternative : public AlgorithmStrategy
+
+class SecondVersion : public AlgorithmStrategy
 {
 private:
     std::vector<std::pair<int, int>> _studentsRoster_X;
@@ -12,9 +12,9 @@ private:
     void setComputersRoster_Y(int *);
     void SortStudentsAndComputersRosters();
 public:
-    BruteForceAlternative(GeneratorTest *);
-    BruteForceAlternative(int, int, int *, int *);
-    ~BruteForceAlternative() = default;
+    SecondVersion(GeneratorTest *);
+    SecondVersion(int, int, int *, int *);
+    ~SecondVersion() = default;
     std::vector<int> getStudentsRoster_X();
     std::vector<int> getComputersRoster_Y();
     int solve(std::vector<int> &) override;
