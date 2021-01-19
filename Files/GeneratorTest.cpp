@@ -10,6 +10,16 @@ GeneratorTest::GeneratorTest(int min_count, int max_count)
     _computers_Y = AddComputers(_countOfAudiences_M);
 }
 
+GeneratorTest::GeneratorTest(int new_n, int new_m, int min_count, int max_count)
+{
+    this->MIN_COUNT = min_count;
+    this->MAX_COUNT = max_count;
+    _countOfAudiences_M = new_m;
+    _countOfGroups_N = new_n;
+    _students_X = AddStudents(_countOfGroups_N);
+    _computers_Y = AddComputers(_countOfAudiences_M);
+}
+
 int GeneratorTest::Randomizator(int min, int max)
 {
     static const double fraction = 1.0 / (static_cast<double>(RAND_MAX) + 1.0); 

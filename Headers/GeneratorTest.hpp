@@ -22,6 +22,7 @@ private:
 
 public:
     GeneratorTest(int min_count, int max_count);
+    GeneratorTest(int new_n, int new_m, int min_count, int max_count);
     ~GeneratorTest() = default;
     
     int getCountOfGroups_N();
