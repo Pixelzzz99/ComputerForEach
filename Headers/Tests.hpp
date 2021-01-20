@@ -3,6 +3,7 @@
 #include "ComputersForEach.hpp"
 #include <ctime>
 #include <chrono>
+#include <fstream>
 class Tests
 {
 private:
@@ -17,5 +18,6 @@ public:
     int CheckBruteForceVersion();
     int CompareFirstAndSecondVersionsWithConsoleTable();
     int CompareFirstAndSecondVersionsWithPythonTable();
+    int CompareFirstAndSecondDifferentWithOtherNAndMInPythonGraphs();
 };
 
