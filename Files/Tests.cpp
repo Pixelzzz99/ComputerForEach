@@ -177,8 +177,8 @@ int Tests::CompareFirstAndSecondDifferentWithOtherNAndMInPythonGraphs()
     
     for (int i = 0; i < 100; i++)
     {
-        ComputersForEach *test1 = new ComputersForEach(new FirstVersion(new GeneratorTest(n_num, m_num)));
-        ComputersForEach *test2 = new ComputersForEach(new SecondVersion(new GeneratorTest(n_num, m_num)));
+        ComputersForEach *test1 = new ComputersForEach(new FirstVersion(new GeneratorTest(n_num, m_num, 1, 1000)));
+        ComputersForEach *test2 = new ComputersForEach(new SecondVersion(new GeneratorTest(n_num, m_num, 1, 1000)));
 
         std::vector<int> roster1;
         std::vector<int> roster2;
