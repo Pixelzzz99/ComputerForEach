@@ -40,15 +40,24 @@ void FirstVersion::setComputersRoster_Y(int *newComputerRoster_Y)
 int FirstVersion::solve(std::vector<int> &finalRoster)
 {
     SortStudentsAndComputersRosters();
-    int id = 0;
     int result = 0;
-    std::vector<int> answer(getCountOfGroups_N(), -1);
-    std::vector<bool> used(getCountOfAudiences_M(), false);
+    int *answer = new int[getCountOfGroups_N()];
+    for (int i = 0; i < getCountOfGroups_N(); i++)
+    {
+        answer[i] = -1;
+    }
+
+    bool *used = new bool[getCountOfAudiences_M()];
+    for (int i = 0; i < getCountOfAudiences_M(); i++)
+    {
+        used[i] = false;
+    }
 
     for (int i = 0; i < getCountOfGroups_N(); i++)
     {
         for (int j = 0; j < getCountOfAudiences_M(); j++)
         {
+            index++;
             if (used[j])
                 continue;
             if (_studentsRoster_X[i].first < _computersRoster_Y[j].first)
@@ -60,10 +69,12 @@ int FirstVersion::solve(std::vector<int> &finalRoster)
             }
         }
     }
-    for(int element : answer)
+
+    /*for(int element : answer)
     {
         finalRoster.push_back(element + 1);
-    }
+    }*/
+
     return result;
 }
 

@@ -173,7 +173,7 @@ int Tests::CompareFirstAndSecondVersionsWithPythonTable()
 {
     ComputersForEach *test1 = new ComputersForEach(new FirstVersion(_tests));
     ComputersForEach *test2 = new ComputersForEach(new SecondVersion(_tests));
-    
+
     std::vector<int> roster1;
     std::vector<int> roster2;
     unsigned int start_time_test1 = clock();

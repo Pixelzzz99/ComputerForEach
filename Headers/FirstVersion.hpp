@@ -10,9 +10,9 @@ private:
     void setStudentsRoster_X(int *);
     void setComputersRoster_Y(int *);
     void SortStudentsAndComputersRosters();
-
-
+    
 public:
+    
     FirstVersion(GeneratorTest *);
     FirstVersion(int, int, int*, int*);
     ~FirstVersion() = default;

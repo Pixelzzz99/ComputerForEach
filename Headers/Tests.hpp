@@ -13,9 +13,12 @@ private:
 public:
     Tests(GeneratorTest * test = nullptr);
     void setTests(GeneratorTest *);
+    int SimpleTest();
+    
     int CheckFirstVersion();
     int CheckSecondVersion();
     int CheckBruteForceVersion();
+    
     int CompareFirstAndSecondVersionsWithConsoleTable();
     int CompareFirstAndSecondVersionsWithPythonTable();
     int CompareFirstAndSecondDifferentWithOtherNAndMInPythonGraphs();

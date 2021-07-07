@@ -2,6 +2,7 @@
 
 ComputersForEach::ComputersForEach(AlgorithmStrategy *strategy) : _strategy(strategy)
 {
+    this->_strategy = strategy;
 }
 
 ComputersForEach::~ComputersForEach()

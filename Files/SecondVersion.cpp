@@ -67,7 +67,6 @@ int SecondVersion::solve(std::vector<int> &finalRoster)
     {
         while (id < getCountOfAudiences_M() && _studentsRoster_X[i].first >= _computersRoster_Y[id].first)
             id++;
-        
 
         if (id == getCountOfAudiences_M()) 
             break;

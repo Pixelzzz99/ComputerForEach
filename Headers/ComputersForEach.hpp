@@ -18,7 +18,10 @@ public:
     void setCountOfAudiences_M(int);
 
     void setStrategy(AlgorithmStrategy *);
-
+    int getindex()
+    {
+        return _strategy->index;
+    }
     int DoSolve(std::vector<int> &) const;
 };
 
